@@ -102,32 +102,32 @@ async function startClient() {
         }
         switch (command) {
             case 'GET':
-                const filenameGet = await askUserInput('Enter filepath: ');
-                await handleGetRequest(filenameGet);
+                const filepathGet = await askUserInput('Enter filepath: ');
+                await handleGetRequest(filepathGet);
                 break;
             case 'PUT':
-                const filenamePut = await askUserInput('Enter filepath: ');
+                const filepathPut = await askUserInput('Enter filepath: ');
                 const newDataPut = await askUserInput('Enter new data: ');
-                await handlePutRequest(filenamePut, newDataPut);
+                await handlePutRequest(filepathPut, newDataPut);
                 break;
             case 'POST':
-                const filenamePost = await askUserInput('Enter filepath: ');
+                const filepathPost = await askUserInput('Enter filepath: ');
                 const newDataPost = await askUserInput('Enter data to append: ');
-                await handlePostRequest(filenamePost, newDataPost);
+                await handlePostRequest(filepathPost, newDataPost);
                 break;
             case 'DELETE':
                 const filepathDelete = await askUserInput('Enter filepath: ');
                 await handleDeleteRequest(filepathDelete);
                 break;
             case 'COPY':
-                const filenameCopy = await askUserInput('Enter source filepath: ');
+                const filepathCopy = await askUserInput('Enter source filepath: ');
                 const destinationCopy = await askUserInput('Enter destination filepath: ');
-                await handleCopyRequest(filenameCopy, destinationCopy);
+                await handleCopyRequest(filepathCopy, destinationCopy);
                 break;
             case 'MOVE':
-                const filenameMove = await askUserInput('Enter source filepath: ');
+                const filepathMove = await askUserInput('Enter source filepath: ');
                 const destinationMove = await askUserInput('Enter destination filepath: ');
-                await handleMoveRequest(filenameMove, destinationMove);
+                await handleMoveRequest(filepathMove, destinationMove);
                 break;
             default:
                 console.log('Invalid command.');
